@@ -41,7 +41,8 @@ Naranja     #F28066 */
 
 /* SLOGAN */
 .slogan-box {
-    --gap: 100px;
+    width: 100%;
+    --gap: 200px;
     font-size: 15px;
     margin-top: 10px;
     padding-block: 8px;
@@ -63,20 +64,48 @@ Naranja     #F28066 */
     align-items: center;
     gap: var(--gap);
     animation: scroll 20s linear infinite;
+
 }
 .slogan{
     font-family: "Titillium Web", sans-serif;
-    font-weight: 500;
-    font-size: 20px;
+    font-weight: 700;
+    font-size: 22px;
     text-transform: uppercase;
 }
-/* .slogan-box:hover ul {
+.slogan-box:hover ul {
     animation-play-state: paused;
-} */
+}
 @keyframes scroll {
     to {
         transform: translateX(calc(-100% - var(--gap)));
     }
+}
+.icons{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--gap);
+}
+.icons i{
+    display: flex;
+    margin: -10px -10px;
+    font-size: 40px;
+    color: white;
+    /* transition: all 0.5s ease; */
+    
+}
+.icons i:hover{
+    color: #07F2F2;
+}
+.icons img{
+    margin: -10px -10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.icons img:hover{
+    filter: invert(29%) sepia(97%) saturate(1233%) hue-rotate(124deg) brightness(103%) contrast(94%); /* https://codepen.io/sosuke/pen/Pjoqqp */
 }
 /* SLIDESHOW */
 .slideshow {
@@ -645,11 +674,14 @@ Naranja     #F28066 */
     font-size: 1.2rem;
     text-align: center;
     line-height: 30px;
-    background:#08748c;
+    background:#000000;
     border-radius: 50%;    
     transform: translateY(-50%);   
     box-shadow: 0 0px 6px rgb(255, 255, 255);
     color: #ffffff;
+}
+.carousel-wrapper i:hover {
+    background:#434343;
 }
 .carousel-wrapper i:first-child {
     left: 4px;
@@ -686,8 +718,8 @@ Naranja     #F28066 */
     justify-content: center;
     flex-direction: column;
     margin-left: 35.5px;
-    border: 5px solid rgb(255, 187, 0);
-    box-shadow: 0 0px 15px rgb(255, 187, 0);
+    border: 5px solid #F28066;
+    box-shadow: 0 0px 15px #F28066;
 }
 .carousel-wrapper .carousel.hide-before::before {
     content: none;
