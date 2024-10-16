@@ -1,0 +1,168 @@
+------------------------------
+Página Principal
+------------------------------
+1. GNUM
+Descripción general
+Publicaciones Recientes
+Colaboradores (Nombre de todos los profesores)
+
+2. CFD
+Descripción general 
+Proyectos destacados 
+Colaboradores 
+¡Conoce más!
+
+3. BIOMEC
+
+4. FEM
+
+5. FLUMEX
+
+6. REACT
+
+------------------------------
+Página Específica
+------------------------------
+1. CFD
+Descripción general 
+Líneas de investigación 
+Objetivos a largo plazo 
+Principales herramientas o técnicas empleadas
+Desafíos y futuras direcciones
+
+Proyectos (actuales y finalizados)
+
+Herramientas y software desarrollados
+
+Integrantes del grupo
+Eventos o talleres
+
+2. BIOMEC
+
+3. FEM
+
+4. FLUMEX
+
+5. REACT
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>GNUM</title>
+</head>
+<body>
+    <main class="main">
+        <!-- SLIDESHOW -->
+        <section class="slideshow">
+            <ul class="navigation">
+                <li class="navigation-item active">
+                    <span class="rotate-holder"></span>
+                    <span class="background-holder" style="background-image: url(assets/logosGNUM/logoGNUM-CFD_V3.svg);"></span>
+                </li>
+                
+                <li class="navigation-item">
+                    <span class="rotate-holder"></span>
+                    <span class="background-holder" style="background-image: url(assets/logosGNUM/logoGNUM-CFD_V3.svg);"></span>
+                </li>
+            
+                <li class="navigation-item">
+                    <span class="rotate-holder"></span>
+                    <span class="background-holder" style="background-image: url(assets/logosGNUM/logoGNUM-BIOMEC_V3.svg);"></span>
+                </li>
+            
+                <li class="navigation-item">
+                    <span class="rotate-holder"></span>
+                    <span class="background-holder" style="background-image: url(assets/logosGNUM/logoGNUM-FEM_V3.svg);"></span>
+                </li>
+            
+                <li class="navigation-item">
+                    <span class="rotate-holder"></span>
+                    <span class="background-holder" style="background-image: url(assets/logosGNUM/logoGNUM-FLUMEX_V3.svg);"></span>
+                </li>
+            
+                <li class="navigation-item">
+                    <span class="rotate-holder"></span>
+                    <span class="background-holder" style="background-image: url(assets/logosGNUM/logoGNUM-REACT_V3.svg);"></span>
+                </li>     
+            </ul>
+
+            <!-- SLIDESHOW-DETAILS -->
+            <div class="detail">
+                <div class="detail-item active">
+                    <div class="headline">GNUM</div>
+                    <div class="background" style="background-image: url(assets/img/aulas_unal.jpg);"></div>
+                    <!-- GNUM DESCRIPTION -->
+                        <h1 class="left">Grupo de Investigación en</h1>
+                        <h1 class="right">Modelación y Métodos Numéricos</h1>
+                        <div class="text-box">
+                            <h2>Nuestro grupo está dedicado a la investigación avanzada en métodos numéricos y modelación aplicada a problemas científicos e industriales. Nos especializamos en el desarrollo de herramientas computacionales que permitan resolver fenómenos complejos, desde la simulación de fluidos hasta la dinámica de reacciones químicas.
+
+                                Con un enfoque multidisciplinario, combinamos técnicas de modelado matemático, algoritmos de optimización y simulación de alto rendimiento para brindar soluciones innovadoras en diferentes campos de la ingeniería y la ciencia.</h2>
+                        </div>
+                    <a href="">¡Conoce más!</a>
+                </div>
+                
+                <div class="detail-item">
+                    <div class="headline">CFD</div>
+                    <div class="video-wrapper">
+                        <video class="background" autoplay muted loop>
+                            <source src="assets/video/Video_1.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <!-- CFD DESCRIPTION -->
+                    <h1 class="left">Dinámica de Fluido</h1>
+                    <h1 class="right">Computacional</h1>
+                    <div class="text-box">
+                        <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam praesentium dolore ullam maiores soluta repellat. Id, velit ipsum! Dolores non harum quos dicta magni quo veritatis a omnis facere illum.</h2>
+                    </div>
+                    <a href="">¡Conoce más!</a>
+                    
+                </div>
+                  
+                <div class="detail-item">
+                    <div class="headline">BIOMEC</div>
+                    <div class="background" style="background-image: url(assets/img/Heart.gif);"></div>
+                </div>
+        
+                <div class="detail-item">
+                    <div class="headline">FEM</div>
+                    <div class="background" style="background-image: url(assets/img/fem.gif);"></div>
+                </div>
+        
+                <div class="detail-item">
+                    <div class="headline">FLUMEX</div>
+                    <div class="background" style="background-image: url(assets/img/Buho_unal.jpg);"></div>
+                </div>
+        
+                <div class="detail-item">
+                    <div class="headline">REACT</div>
+                    <div class="background" style="background-image: url(assets/img/fondoprueba.webp);"></div> 
+                </div> 
+                <!-- DOTS EFFECT -->
+                <canvas id="dotsCanvas"></canvas>       
+            </div>
+            
+        </section>
+
+
+
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+    <script src="https://unpkg.com/imagesloaded@4.1.4/imagesloaded.pkgd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/plugins/CSSPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/plugins/TextPlugin.min.js"></script>
+    <script src="https://unpkg.com/delaunator@5.0.0/delaunator.min.js"></script>
+    <script src="assets/js/demo.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/scroll.js"></script>
+
+
+</body>
+</html>
