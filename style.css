@@ -507,6 +507,7 @@ Naranja     #F28066 */
 }
 .blog-slider__button:hover {
     transform: scale(1.5);
+    z-index: 100;
 }
 .blog-slider__button:hover .button-image,
 .blog-slider__button:hover .separator,
@@ -664,8 +665,8 @@ Naranja     #F28066 */
     justify-content: center;
     flex-direction: column;
     margin-left: 35.5px;
-    border: 5px solid #F28066;
-    box-shadow: 0 0px 15px #F28066;
+    border: 5px solid #690096;
+    box-shadow: 0 0px 15px #690096;
 }
 .carousel-wrapper .carousel.hide-before::before {
     content: none;

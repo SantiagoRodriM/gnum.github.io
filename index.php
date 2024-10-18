@@ -1,3 +1,11 @@
+<?php
+
+include_once('conexion.php');
+
+$sql = "SELECT * FROM publicaciones_recientes";
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,6 +20,14 @@
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
 
     <title>GNUM</title>
+
+    <meta property="og:title" content="GNUM">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://santiagorodrim.github.io/gnum.github.io/">
+    <meta property="og:image" content="https://santiagorodrim.github.io/gnum.github.io/assets/logosGNUM/gnum_logo_vista_previa.png">
+    <meta property="og:description" content="Grupo de Investigación en Modelación y Métodos Numéricos de la Universidad Nacional de Colombia.">
+    <link rel="icon" href="assets/logosGNUM/gnum_logo.png" type="image/x-icon">
+
 </head>
 <body>
     <main class="main">
@@ -74,7 +90,7 @@
                     <span class="background-holder" style="background-image: url(assets/logosGNUM/logoGNUM-REACT_V3.svg);"></span>
                 </li>     
             </ul>
-
+            
             <!-- SLIDESHOW-DETAILS -->
             <div class="detail">
                 <div class="detail-item active">
@@ -107,47 +123,24 @@
                                 <div class="blog-slider__content">
                                     <div class="blog-slider__title">Publicaciones Recientes</div>
                                     <div class="blog-slider__text">En esta sección podrás encontrar nuestros últimos avances de todas las líneas de investigación en modelación y métodos numéricos aplicados a la ciencia y la ingeniería. Estas publicaciones destacan los resultados más recientes de nuestras investigaciones en simulación de fluidos, dinámica de reacciones químicas, y optimización matemática.</div>
-                                    <div class="blog-slider__button-container">  
-                                        <a href="#" class="blog-slider__button">
-                                            <img src="assets/img/Calcinador_de_lodos.jpg" alt="" class="button-image">
-                                            <hr class="separator">
-                                            <span class="button-text">Calcinador de Lodos</span>
-                                            <span class="button-subtext">Prof. Carlos Duque</span>
-                                            <span class="button-subtext">Prof. Carlos Galeano</span>
-                                            <div class="button-hover-text">Calcinador de Lodos</div>
-                                            <div class="button-hover-subtext">Este proyecto fue desarrollado para la empresa del Acueducto de Bogotá, en donde se realizó el análisis del procesos dentro de un horno calcinador, teniendo en cuenta las reacciones químicas causadas por la biomasa para determinar la presencia de estas en cada etapa y la eficiencia del horno.</div>
-                                            <div class="button-hover-date"><strong>Marzo 2024</strong> - <strong>Mayo 2024</strong></div>
-                                        </a>                                        
-                                        <a href="#" class="blog-slider__button">
-                                            <img src="assets/img/Proyecto_Brinsa.png" alt="" class="button-image">
-                                            <hr class="separator">
-                                            <span class="button-text">Proyecto Brinsa</span>
-                                            <span class="button-subtext">Prof. Carlos Duque</span>
-                                            <span class="button-subtext">Prof. Carlos Galeano</span>
-                                            <div class="button-hover-text">Proyecto Brinsa</div>
-                                            <div class="button-hover-subtext">Este proyecto se centró en el diseño y optimización de un sistema de evaporación para la empresa Brinsa, con el objetivo de mejorar la eficiencia energética y reducir los costos operativos. Se analizaron diferentes configuraciones y materiales para maximizar la transferencia de calor y minimizar las pérdidas.</div>
-                                            <div class="button-hover-date"><strong>Marzo 2024</strong> - <strong>Mayo 2024</strong></div>
-                                        </a>
-                                        <a href="#" class="blog-slider__button">
-                                            <img src="assets/img/Proyecto_3.png" alt="" class="button-image">
-                                            <hr class="separator">
-                                            <span class="button-text">SpaceX Ship</span>
-                                            <span class="button-subtext">Prof. Carlos Duque</span>
-                                            <span class="button-subtext">Prof. Carlos Galeano</span>
-                                            <div class="button-hover-text">SpaceX Ship</div>
-                                            <div class="button-hover-subtext">El proyecto SpaceX Ship consistió en el estudio aerodinámico y estructural de una nave espacial, teniendo en cuenta las condiciones extremas del lanzamiento y reingreso. Se realizaron simulaciones avanzadas para optimizar la forma y los materiales del cohete, garantizando su rendimiento y seguridad.</div>
-                                            <div class="button-hover-date"><strong>Marzo 2024</strong> - <strong>Mayo 2024</strong></div>
-                                        </a>
-                                        <a href="#" class="blog-slider__button">
-                                            <img src="assets/img/Proyecto_4.webp" alt="" class="button-image">
-                                            <hr class="separator">
-                                            <span class="button-text">Tunel de Viento</span>
-                                            <span class="button-subtext">Prof. Carlos Duque</span>
-                                            <span class="button-subtext">Prof. Carlos Galeano</span>
-                                            <div class="button-hover-text">Tunel de Viento</div>
-                                            <div class="button-hover-subtext">En este proyecto, se llevó a cabo el diseño y construcción de un túnel de viento de baja velocidad, destinado a pruebas aerodinámicas de vehículos y aeronaves. El túnel de viento permite evaluar el comportamiento del flujo de aire alrededor de los objetos, mejorando su diseño aerodinámico y eficiencia.</div>
-                                            <div class="button-hover-date"><strong>Marzo 2024</strong> - <strong>Mayo 2024</strong></div>
-                                        </a>
+                                    <div class="blog-slider__button-container">
+                                        <?php
+                                        $publi_recient = mysqli_query($connection, $sql);                                        
+                                        while($record = mysqli_fetch_assoc($publi_recient)){
+                                            ?>
+                                            <a href="#" class="blog-slider__button">
+                                                <img src="<?php echo $record['Imagen'] ?>" alt="" class="button-image">
+                                                <hr class="separator">
+                                                <span class="button-text"><?php echo $record['Titulo'] ?></span>
+                                                <span class="button-subtext"><?php echo $record['Profesor 1'] ?></span>
+                                                <span class="button-subtext"><?php echo $record['Profesor 2'] ?></span>
+                                                <div class="button-hover-text"><?php echo $record['Titulo'] ?></div>
+                                                <div class="button-hover-subtext"><?php echo $record['Descripcion'] ?></div>
+                                                <div class="button-hover-date"><strong><?php echo $record['Fecha'] ?></strong></div>
+                                            </a>
+                                        <?php
+                                        }
+                                        ?>                                       
                                     </div>
                                 </div>
                             </div>
